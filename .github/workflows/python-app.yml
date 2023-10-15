@@ -25,8 +25,7 @@ jobs:
         name: Build
         uses: docker/build-push-action@v4
 
-      # Add a new step to install pytest and then run pytest
-      - name: Install dependencies and run pytest
+      - name: Test
         run: |
-          pip install pytest
+
           pytest
