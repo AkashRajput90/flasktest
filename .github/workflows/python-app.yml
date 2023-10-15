@@ -25,6 +25,9 @@ jobs:
         name: Build
         uses: docker/build-push-action@v4
 
-      # Add a new step to run pytest
-      - name: Run pytest
-        uses: pavelzw/pytest-action@v2
+      # Add a new step to install pytest and then run pytest
+      - name: Install dependencies and run pytest
+        run: |
+          pip install -r requirements.txt
+          pip install pytest
+          pytest
