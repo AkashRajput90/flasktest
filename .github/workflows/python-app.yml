@@ -28,6 +28,5 @@ jobs:
       # Add a new step to install pytest and then run pytest
       - name: Install dependencies and run pytest
         run: |
-          pip install -r requirements.txt
           pip install pytest
           pytest
