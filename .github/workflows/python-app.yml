@@ -42,5 +42,5 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: flaskhello.azurecr.io/aspcoresample:${{ github.sha }}
+          tags: flaskv1.azurecr.io/aspcoresample:${{ github.sha }}
           file: Dockerfile
