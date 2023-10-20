@@ -42,15 +42,5 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: flaskv1.azurecr.io/aspcoresample:${{ github.sha }}
+          tags: flaskhello.azurecr.io/aspcoresample:${{ github.sha }}
           file: Dockerfile
-      - name: 'Deploy to Azure Container Instances'
-        uses: 'azure/aci-deploy@v1'
-        with:
-            resource-group: flaskgroup
-            dns-name-label: url-for-container
-            image: flaskv1.azurecr.io/nodejssampleapp:${{ github.sha }}
-            registry-username: ${{ secrets.REGISTRY_USERNAME }}
-            registry-password: ${{ secrets.REGISTRY_PASSWORD }}
-            name: helloflask
-            location: 'canada central'
