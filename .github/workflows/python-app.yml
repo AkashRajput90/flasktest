@@ -44,5 +44,16 @@ jobs:
           push: true
           tags: flaskv2.azurecr.io/aspcoresample:${{ github.sha }}
           file: Dockerfile
-
+      - name: Log in to Azure
+        run: |
+          az login 
+      - name: 'Deploy to Azure Container Instances'
+        uses: 'azure/aci-deploy@v1'
+        with:
+          resource-group: acigroupv2
+          image: flaskv2.azurecr.io/flaskhello:${{ github.sha }}
+          registry-username: ${{ secrets.REGISTRY_USERNAME }}
+          registry-password: ${{ secrets.REGISTRY_PASSWORD }}
+          name: flask-container
+          location: 'central canada' 
 
