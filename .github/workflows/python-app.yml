@@ -58,7 +58,7 @@ jobs:
         with:
           resource-group: acigroupv2
           dns-name-label: flaskwebv2
-          image: flaskv2.azurecr.io/flaskhello:${{ github.sha }}
+          image: flaskv2.azurecr.io/flaskhello:latest
           registry-username: ${{ secrets.REGISTRY_USERNAME }}
           registry-password: ${{ secrets.REGISTRY_PASSWORD }}
           name: flask-container
