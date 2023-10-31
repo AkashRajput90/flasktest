@@ -52,6 +52,7 @@ jobs:
         uses: 'azure/aci-deploy@v1'
         with:
           resource-group: acigroupv2
+          dns-label-name: flaskwebv2
           image: flaskv2.azurecr.io/flaskhello:${{ github.sha }}
           registry-username: ${{ secrets.REGISTRY_USERNAME }}
           registry-password: ${{ secrets.REGISTRY_PASSWORD }}
