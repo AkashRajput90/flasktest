@@ -24,7 +24,12 @@ jobs:
           password: ${{ secrets.DOCKER_TOKEN }}
       -
         name: Build Docker Container
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: ${{ secrets.DOCKER_NAME }}/flaskhello:${{ github.sha }}
+          file: Dockerfile
+
       -
         name: Checkout for ACR Push
         uses: actions/checkout@v2
@@ -58,4 +63,3 @@ jobs:
           registry-password: ${{ secrets.REGISTRY_PASSWORD }}
           name: flask-container
           location: 'central canada' 
-
