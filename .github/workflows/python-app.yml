@@ -62,4 +62,4 @@ jobs:
           registry-username: ${{ secrets.REGISTRY_USERNAME }}
           registry-password: ${{ secrets.REGISTRY_PASSWORD }}
           name: flask-container
-          location: 'central canada' 
+          location: 'Canada Central' 
