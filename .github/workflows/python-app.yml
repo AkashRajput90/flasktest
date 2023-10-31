@@ -27,7 +27,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ${{ secrets.DOCKER_NAME }}/flaskhello:${{ github.sha }}
+          tags: ${{ secrets.DOCKER_NAME }}/flaskhello:latest
           file: Dockerfile
 
       -
@@ -47,7 +47,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: flaskv2.azurecr.io/aspcoresample:${{ github.sha }}
+          tags: flaskv2.azurecr.io/aspcoresample:latest
           file: Dockerfile
       -
         name: Log in to Azure
