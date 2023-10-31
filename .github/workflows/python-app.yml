@@ -62,5 +62,5 @@ jobs:
           registry-username: ${{ secrets.REGISTRY_USERNAME }}
           registry-password: ${{ secrets.REGISTRY_PASSWORD }}
           name: aciflaskv2
-          restart-policy: never
+          restart-policy: Never
           location: 'Canada Central' 
