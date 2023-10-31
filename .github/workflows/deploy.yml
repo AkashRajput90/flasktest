@@ -17,7 +17,7 @@ jobs:
         with:
           resource-group: acigroupv2
           dns-name-label: flaskwebv2
-          image: flaskv2.azurecr.io/aspcoresample:latest
+          image: flaskv2.azurecr.io/aspcoresample:${{ github.sha }}
           registry-username: ${{ secrets.REGISTRY_USERNAME }}
           registry-password: ${{ secrets.REGISTRY_PASSWORD }}
           name: aciflaskv2
